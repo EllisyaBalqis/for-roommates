@@ -4,64 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For My Lovely Roommates</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffafc;
+      color: #333;
+    }
+    .section {
+      display: none;
+      padding: 50px;
+      text-align: center;
+    }
+    .section.active {
+      display: block;
+    }
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+    .btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #ffb6c1;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .images img {
+      width: 150px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="page active" id="page1">
-    <h1>For My Lovely Roommates</h1>
-    <p class="blue">You are the blue in my calm.</p>
-    <p class="pink">You are the pink in my joy.</p>
-    <p class="green">You are the green in my peace.</p>
-    <button onclick="nextPage()">Next</button>
+  <!-- Section 1: Intro -->
+  <div class="section active" id="section-1">
+    <h1 style="color:blue;">For My Lovely Roommates</h1>
+    <p style="color:pink;">This page is specially made</p>
+    <p style="color:green;">With love 💚</p>
+    <button class="btn" onclick="nextSection()">Next</button>
   </div>
 
-  <div class="page" id="page2">
-    <h2>Grateful Words</h2>
+  <!-- Section 2: Gratitude + Pictures -->
+  <div class="section" id="section-2">
+    <h2>My Heartfelt Thanks</h2>
     <p>
-      As our time in matriks ends, I just want to say thank you for being a part of my life. 
-      You’ve made my days brighter, my nights warmer, and my journey meaningful. 
-      I'm beyond grateful to have you girls with me through all the laughs, stress, and memories.
+      Alhamdulillah, tamat sudah perjuangan kita sebagai pelajar matriks.<br>
+      Terima kasih sebab jadi sebahagian daripada hidup aku yang penuh kenangan.<br>
+      Aku bersyukur sangat dipertemukan dengan korang — banyak gelak tawa, stress, nangis, semua sekali.<br>
+      I love you all always 💗
     </p>
-    <div class="gallery">
-      <img src="images/img1.jpg" alt="Roommate 1">
-      <img src="images/img2.jpg" alt="Roommate 2">
-      <img src="images/img3.jpg" alt="Roommate 3">
-      <img src="images/img4.jpg" alt="Roommate 4">
+    <div class="images">
+      <img src="images/gambar1.jpg" alt="Gambar 1">
+      <img src="images/gambar2.jpg" alt="Gambar 2">
+      <img src="images/gambar3.jpg" alt="Gambar 3">
+      <img src="images/gambar4.jpg" alt="Gambar 4">
     </div>
-    <button onclick="nextPage()">Next</button>
+    <button class="btn" onclick="nextSection()">Next</button>
   </div>
 
-  <div class="page" id="page3">
-    <h2>Sya 💫</h2>
+  <!-- Section 3: Sya -->
+  <div class="section" id="section-3">
+    <h2>To Sya 💛</h2>
     <p>
-      Sya, you’re truly a light in my life. Your calmness, patience, and gentle heart have kept me grounded.
-      Thank you for every small thing you’ve done — your presence has always been a comfort to me. 
-      I’ll never forget your vibes and how you always made things better.
+      Sya, thank you for always being patient with me. You’re the chillest yet most caring person.<br>
+      Thank you for being the calm in our chaos. I love you so much! 💛
     </p>
-    <button onclick="nextPage()">Next</button>
+    <button class="btn" onclick="nextSection()">Next</button>
   </div>
 
-  <div class="page" id="page4">
-    <h2>Marsya 🧸</h2>
+  <!-- Section 4: Marsya -->
+  <div class="section" id="section-4">
+    <h2>To Marsya 💖</h2>
     <p>
-      Marsya, your energy and warmth are unmatched. You always bring laughter into the room, even on our toughest days.
-      Thank you for your endless support, for cheering me up, and for being the sunshine in our room. 
-      I’ll cherish our memories forever.
+      Marsya, you’re literally sunshine in human form!<br>
+      Thank you for your energy, your laughs, and for making things feel lighter even on tough days.<br>
+      Grateful to have you!
     </p>
-    <button onclick="nextPage()">Next</button>
+    <button class="btn" onclick="nextSection()">Next</button>
   </div>
 
-  <div class="page" id="page5">
-    <h2>Wengyee 🌷</h2>
+  <!-- Section 5: Wengyee -->
+  <div class="section" id="section-5">
+    <h2>To Wengyee 💚</h2>
     <p>
-      Wengyee, your kindness and consistency have always made me feel safe. You’re so thoughtful and caring.
-      I’m thankful for all our heart-to-heart talks and the little things you do that made our room feel like home.
-      Love you always!
+      Wengyee, thank you for your strength and for being there even in silence.<br>
+      You’re thoughtful and powerful in your own way. I truly admire that.<br>
+      Much love and hugs 🫶
     </p>
-    <p style="margin-top: 30px;">💖 Terima kasih semua 💖</p>
+    <p>End of my little tribute 💌</p>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    let current = 1;
+    function nextSection() {
+      document.getElementById(`section-${current}`).classList.remove('active');
+      current++;
+      document.getElementById(`section-${current}`).classList.add('active');
+    }
+  </script>
 </body>
 </html>
